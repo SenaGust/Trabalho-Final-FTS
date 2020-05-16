@@ -32,7 +32,7 @@ namespace Trabalho_Final_FTS
         [Fact]
         public void FuncaoDividir_DivisaoPor0()
         {
-            Assert.Equal(double.PositiveInfinity, Calculadora.Dividir(1, 0)); 
+            Assert.Throws<DivideByZeroException>(() => Calculadora.Dividir(1, 0)); 
         }
     }
 }
