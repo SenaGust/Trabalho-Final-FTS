@@ -8,19 +8,19 @@ namespace Trabalho_Final_FTS
 {
     public class Calculadora
     {
-        public static int Somar(int a, int b)
+        public static double Somar(double a, double b)
         {
             return 0;
         }
-        public static int Subtrair(int a, int b)
+        public static double Subtrair(double a, double b)
         {
             return a - b;
         }
-        public static int Multiplicar(int a, int b)
+        public static double Multiplicar(double a, double b)
         {
             return (a * b);
         }
-        public static int Dividir(int a, int b)
+        public static double Dividir(double a, double b)
         {
             return (a / b);
         }

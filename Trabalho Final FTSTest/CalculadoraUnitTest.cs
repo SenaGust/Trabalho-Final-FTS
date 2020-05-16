@@ -12,11 +12,11 @@ namespace Trabalho_Final_FTSTest
         public void Somar_DoisDouble_RetornaDouble()
         {
             // Arrange  
-            var num1 = 2;
-            var num2 = 3;
-            var valorEsperado = 5;
+            double num1 = 2;
+            double num2 = 3;
+            double valorEsperado = 5;
             // Act  
-            var soma = Calculadora.Somar(num1, num2);
+            double soma = Calculadora.Somar(num1, num2);
             //Assert  
             Assert.Equal(valorEsperado, soma);
         }
@@ -24,11 +24,11 @@ namespace Trabalho_Final_FTSTest
         public void Subtrair_DoisDouble_RetornaDouble()
         {
             // Arrange  
-            var num1 = 3;
-            var num2 = 1;
-            var valorEsperado = 2;
+            double num1 = 3;
+            double num2 = 1;
+            double valorEsperado = 2;
             // Act  
-            var soma = Calculadora.Subtrair(num1, num2);
+            double soma = Calculadora.Subtrair(num1, num2);
             //Assert  
             Assert.Equal(valorEsperado, soma);
         }
@@ -36,12 +36,12 @@ namespace Trabalho_Final_FTSTest
         public void Multiplicar_DoisDouble_RetornaDouble()
         {
             //Arrange
-            int num1 = 2;
-            int num2 = 3;
-            int valorEsperado = 6;
+            double num1 = 2;
+            double num2 = 3;
+            double valorEsperado = 6;
 
             //Act
-            int multiplicar = Calculadora.Multiplicar(num1, num2);
+            double multiplicar = Calculadora.Multiplicar(num1, num2);
 
             //Assert
             Assert.Equal(valorEsperado, multiplicar);
