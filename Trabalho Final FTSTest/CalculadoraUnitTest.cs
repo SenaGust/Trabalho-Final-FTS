@@ -23,7 +23,14 @@ namespace Trabalho_Final_FTSTest
         [Fact]
         public void Subtrair_DoisDouble_RetornaDouble()
         {
-
+            // Arrange  
+            var num1 = 3.5;
+            var num2 = 1.3;
+            var valorEsperado = 2.2;
+            // Act  
+            var soma = Calculadora.Subtrair(num1, num2);
+            //Assert  
+            Assert.Equal(valorEsperado, soma);
         }
         [Fact]
         public void Multiplicar_DoisDouble_RetornaDouble()

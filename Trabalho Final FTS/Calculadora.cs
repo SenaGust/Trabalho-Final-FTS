@@ -14,7 +14,7 @@ namespace Trabalho_Final_FTS
         }
         public static double Subtrair(double a, double b)
         {
-            return 0;
+            return a - b;
         }
         public static double Multiplicar(double a, double b)
         {
