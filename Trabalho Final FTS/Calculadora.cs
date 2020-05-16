@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit.Sdk;
 
 namespace Trabalho_Final_FTS
 {
@@ -22,7 +23,7 @@ namespace Trabalho_Final_FTS
         }
         public static double Dividir(double a, double b)
         {
-            return 0;
+            return (a / b);
         }
     }
 }

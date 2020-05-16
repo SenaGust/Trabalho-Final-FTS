@@ -25,9 +25,14 @@ namespace Trabalho_Final_FTS
 
         }
         [Fact]
-        public void FuncaoDividir()
+        public void FuncaoDividir_DivisaoNormal()
         {
-
+            Assert.Equal(4, Calculadora.Dividir(8, 2));
+        }
+        [Fact]
+        public void FuncaoDividir_DivisaoPor0()
+        {
+            Assert.Equal(double.PositiveInfinity, Calculadora.Dividir(1, 0)); 
         }
     }
 }
