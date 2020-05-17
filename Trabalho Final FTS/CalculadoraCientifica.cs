@@ -10,22 +10,25 @@ namespace Trabalho_Final_FTS
     {
         public static double Logaritmo(double a) //João
         {
-            return Math.Log10(a);
+            return Math.Round(Math.Log10(a), 4);
         }
 
         public static double Sen(double a) //Lorena
         {
-            return Math.Round(Math.Sin(a),4);
+            double radiano = a * (Math.PI / 180);
+            return Math.Round(Math.Sin(radiano), 4);
         }
 
         public static double Cos(double a) //Nathan
         {
-            return Math.Round(Math.Cos(a), 4);
+            double radiano = a * (Math.PI / 180);
+            return Math.Round(Math.Cos(radiano), 4);
         }
 
         public static double Tan(double a) //João
         {
-            return Math.Tan(a);
+            double radiano = a * (Math.PI / 180);
+            return Math.Round(Math.Tan(radiano), 4);
         }
 
         public static double Radiciacao(double a) //Lorena
@@ -40,7 +43,7 @@ namespace Trabalho_Final_FTS
 
         public static double Porcentagem(double a) //João
         {
-            return (a / 100);
+            return Math.Round((a / 100));
         }
 
         public static double Pi() //Lorena
