@@ -21,6 +21,7 @@ namespace Trabalho_Final_FTSTest
             //Assert
             Assert.Equal(valorEsperado, soma);
         }
+
         [Fact]
         [Trait("Calculadora", "Somar")]
         public void Somar_DoisDoubleNegativos_RetornaInt()
@@ -34,6 +35,7 @@ namespace Trabalho_Final_FTSTest
             //Assert
             Assert.Equal(valorEsperado, soma);
         }
+
         [Fact]
         [Trait("Calculadora", "Somar")]
         public void Somar_PositivoNegativo_RetornaInt()
@@ -47,6 +49,7 @@ namespace Trabalho_Final_FTSTest
             //Assert
             Assert.Equal(valorEsperado, soma);
         }
+
         [Fact]
         [Trait("Calculadora", "Subtrair")]
         public void Subtrair_DoisDouble_RetornaDouble()
@@ -60,6 +63,7 @@ namespace Trabalho_Final_FTSTest
             //Assert  
             Assert.Equal(valorEsperado, soma);
         }
+
         [Fact]
         [Trait("Calculadora", "Multiplicar")]
         public void Multiplicar_DoisDouble_RetornaDouble()
@@ -76,17 +80,31 @@ namespace Trabalho_Final_FTSTest
             Assert.Equal(valorEsperado, multiplicar);
             
         }
+
         [Fact]
         [Trait("Calculadora", "Dividir")]
         public void Dividir_DoisDouble_RetornaDouble()
         {
-            Assert.Equal(4, Calculadora.Dividir(8, 2));
+            double num1 = 8,
+                num2 = 2,
+                resultadoEsperado = 4;
+
+            double resultado = Calculadora.Dividir(num1, num2);
+
+            Assert.Equal(resultadoEsperado, resultado);
         }
+
         [Fact]
         [Trait("Calculadora", "Dividir")]
-        public void Dividir_DivisaoPor0_RetornaErro()
+        public void Dividir_DivisaoPor0_RetornaInfinito()
         {
-            Assert.Throws<DivideByZeroException>(() => Calculadora.Dividir(1, 0));
+            double num1 = 23.9,
+                num2 = 0.0,
+                resultadoEsperado = double.PositiveInfinity;
+
+            double result = Calculadora.Dividir(num1, num2);
+
+            Assert.Equal(resultadoEsperado, result);
         }
     }
 }
