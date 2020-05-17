@@ -10,6 +10,8 @@ namespace Trabalho_Final_FTS
     {
         static void Main(string[] args)
         {
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.Iniciar();
         }
     }
 }
