@@ -10,7 +10,7 @@ namespace Trabalho_Final_FTSTest
     {
         [Fact]
         [Trait("Calculadora", "Somar")]
-        public void Somar_DoisDoublePositivos_RetornaInt()
+        public void Somar_DoisDoublePositivos_RetornaDouble()
         {
             // Arrange
             double num1 = 2.9;
@@ -24,7 +24,7 @@ namespace Trabalho_Final_FTSTest
 
         [Fact]
         [Trait("Calculadora", "Somar")]
-        public void Somar_DoisDoubleNegativos_RetornaInt()
+        public void Somar_DoisDoubleNegativos_RetornaDouble()
         {
             // Arrange
             double num1 = -2.9;
@@ -38,7 +38,7 @@ namespace Trabalho_Final_FTSTest
 
         [Fact]
         [Trait("Calculadora", "Somar")]
-        public void Somar_PositivoNegativo_RetornaInt()
+        public void Somar_PositivoNegativo_RetornaDouble()
         {
             // Arrange
             double num1 = 2.9;
