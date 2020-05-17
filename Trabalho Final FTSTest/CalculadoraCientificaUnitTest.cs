@@ -10,6 +10,50 @@ namespace Trabalho_Final_FTSTest
     {
 
         #region Logaritmo
+        [Fact]
+        [Trait("CalculadoraCientifica", "Logaritmo")]
+        public void Logaritmo_DoublePositivo_RetornaDouble()
+        {
+            // Arrange
+            double num = 4.5;
+            double valorEsperado = 0.6532;
+
+            // Act
+            double sen = CalculadoraCientifica.Logaritmo(num);
+
+            //Assert
+            Assert.Equal(valorEsperado, sen);
+        }
+
+        [Fact]
+        [Trait("CalculadoraCientifica", "Logaritmo")]
+        public void Logaritmo_DoubleIgualZero_RetornaInfinitoNegativo()
+        {
+            // Arrange
+            double num = 0;
+            double valorEsperado = double.NegativeInfinity;
+
+            // Act
+            double sen = CalculadoraCientifica.Logaritmo(num);
+
+            //Assert
+            Assert.Equal(valorEsperado, sen);
+        }
+
+        [Fact]
+        [Trait("CalculadoraCientifica", "Logaritmo")]
+        public void Logaritmo_DoubleNegativo_RetornaNaoEhNum()
+        {
+            // Arrange
+            double num = -1.5;
+            double valorEsperado = double.NaN;
+
+            // Act
+            double sen = CalculadoraCientifica.Logaritmo(num);
+
+            //Assert
+            Assert.Equal(valorEsperado, sen);
+        }
         #endregion
 
         #region Seno
@@ -19,7 +63,7 @@ namespace Trabalho_Final_FTSTest
         {
             // Arrange
             double num = 2;
-            double valorEsperado = 0.9093;
+            double valorEsperado = 0.0349;
 
             // Act
             double sen = CalculadoraCientifica.Sen(num);
@@ -35,7 +79,7 @@ namespace Trabalho_Final_FTSTest
         {
             // Arrange
             double num = -2;
-            double valorEsperado = -0.9093;
+            double valorEsperado = -0.0349;
 
             // Act
             double sen = CalculadoraCientifica.Sen(num);
@@ -67,7 +111,7 @@ namespace Trabalho_Final_FTSTest
         {
             // Arrange
             double num = 2;
-            double valorEsperado = -0.4161;
+            double valorEsperado = 0.9994;
             // Act
             double valorObtido = CalculadoraCientifica.Cos(num);
             //Assert
@@ -79,7 +123,7 @@ namespace Trabalho_Final_FTSTest
         {
             // Arrange
             double num = -2;
-            double valorEsperado = -0.4161;
+            double valorEsperado = 0.9994;
             // Act
             double valorObtido = CalculadoraCientifica.Cos(num);
             //Assert
@@ -100,6 +144,42 @@ namespace Trabalho_Final_FTSTest
         #endregion
 
         #region Tangente
+        [Fact]
+        [Trait("CalculadoraCientifica", "Tan")]
+        public void Tan_DoublePositivo_RetornaDouble()
+        {
+            // Arrange
+            double num = 45;
+            double valorEsperado = 1;
+            // Act
+            double valorObtido = CalculadoraCientifica.Tan(num);
+            //Assert
+            Assert.Equal(valorEsperado, valorObtido);
+        }
+        [Fact]
+        [Trait("CalculadoraCientifica", "Tan")]
+        public void Tan_DoubleNegativo_RetornaDouble()
+        {
+            // Arrange
+            double num = -45;
+            double valorEsperado = -1;
+            // Act
+            double valorObtido = CalculadoraCientifica.Tan(num);
+            //Assert
+            Assert.Equal(valorEsperado, valorObtido);
+        }
+        [Fact]
+        [Trait("CalculadoraCientifica", "Tan")]
+        public void Tan_DoubleIgualZero_RetornaDouble()
+        {
+            // Arrange
+            double num = 0;
+            double valorEsperado = 0;
+            // Act
+            double valorObtido = CalculadoraCientifica.Tan(num);
+            //Assert
+            Assert.Equal(valorEsperado, valorObtido);
+        }
         #endregion
 
         #region Radiciação
@@ -219,6 +299,18 @@ namespace Trabalho_Final_FTSTest
         #endregion
 
         #region Porcentagem
+        [Fact]
+        [Trait("CalculadoraCientifica", "Porcentagem")]
+        public void Porcentagem_Double_RetornaDouble()
+        {
+            // Arrange
+            double num = 25.5;
+            double valorEsperado = 0.255;
+            // Act
+            double valorObtido = CalculadoraCientifica.Porcentagem(num);
+            // Assert
+            Assert.Equal(valorEsperado, valorEsperado);
+        }
         #endregion
 
         #region Pi
