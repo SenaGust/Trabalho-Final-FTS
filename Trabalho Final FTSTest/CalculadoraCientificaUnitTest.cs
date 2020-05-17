@@ -60,18 +60,18 @@ namespace Trabalho_Final_FTSTest
         }
         #endregion
 
-        #region Coseno
+        #region Cosseno
         [Fact]
         [Trait("CalculadoraCientifica", "Cos")]
         public void Cos_DoublePositivo_RetornaDouble()
         {
             // Arrange
             double num = 2;
-            double valorEsperado = -0.4161468365471424;
+            double valorEsperado = -0.4161;
             // Act
-            double soma = CalculadoraCientifica.Cos(num);
+            double valorObtido = CalculadoraCientifica.Cos(num);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         [Fact]
         [Trait("CalculadoraCientifica", "Cos")]
@@ -79,11 +79,11 @@ namespace Trabalho_Final_FTSTest
         {
             // Arrange
             double num = -2;
-            double valorEsperado = -0.4161468365471424;
+            double valorEsperado = -0.4161;
             // Act
-            double soma = CalculadoraCientifica.Cos(num);
+            double valorObtido = CalculadoraCientifica.Cos(num);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         [Fact]
         [Trait("CalculadoraCientifica", "Cos")]
@@ -93,9 +93,9 @@ namespace Trabalho_Final_FTSTest
             double num = 0;
             double valorEsperado = 1;
             // Act
-            double soma = CalculadoraCientifica.Cos(num);
+            double valorObtido = CalculadoraCientifica.Cos(num);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         #endregion
 
@@ -160,9 +160,9 @@ namespace Trabalho_Final_FTSTest
             double num2 = 0;
             double valorEsperado = 1;
             // Act
-            double soma = CalculadoraCientifica.Potenciacao(num1, num2);
+            double valorObtido = CalculadoraCientifica.Potenciacao(num1, num2);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         [Fact]
         [Trait("CalculadoraCientifica", "Potenciacao")]
@@ -173,9 +173,9 @@ namespace Trabalho_Final_FTSTest
             double num2 = 4;
             double valorEsperado = 625;
             // Act
-            double soma = CalculadoraCientifica.Potenciacao(num1, num2);
+            double valorObtido = CalculadoraCientifica.Potenciacao(num1, num2);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         [Fact]
         [Trait("CalculadoraCientifica", "Potenciacao")]
@@ -186,9 +186,9 @@ namespace Trabalho_Final_FTSTest
             double num2 = -4;
             double valorEsperado = 0.0016;
             // Act
-            double soma = CalculadoraCientifica.Potenciacao(num1, num2);
+            double valorObtido = CalculadoraCientifica.Potenciacao(num1, num2);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         [Fact]
         [Trait("CalculadoraCientifica", "Potenciacao")]
@@ -197,11 +197,11 @@ namespace Trabalho_Final_FTSTest
             // Arrange
             double num1 = 7;
             double num2 = -3;
-            double valorEsperado = 0.0029154518950437317;
+            double valorEsperado = 0.0029;
             // Act
-            double soma = CalculadoraCientifica.Potenciacao(num1, num2);
+            double valorObtido = CalculadoraCientifica.Potenciacao(num1, num2);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         [Fact]
         [Trait("CalculadoraCientifica", "Potenciacao")]
@@ -212,9 +212,9 @@ namespace Trabalho_Final_FTSTest
             double num2 = 3;
             double valorEsperado = -343;
             // Act
-            double soma = CalculadoraCientifica.Potenciacao(num1, num2);
+            double valorObtido = CalculadoraCientifica.Potenciacao(num1, num2);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         #endregion
 
@@ -244,11 +244,11 @@ namespace Trabalho_Final_FTSTest
         {
             // Arrange
             double num = 25;
-            double valorEsperado = 3.2188758248682007492015186664524;
+            double valorEsperado = 3.2189;
             // Act
-            double soma = CalculadoraCientifica.Ln(num);
+            double valorObtido = CalculadoraCientifica.Ln(num);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         [Fact]
         [Trait("CalculadoraCientifica", "Ln")]
@@ -258,9 +258,9 @@ namespace Trabalho_Final_FTSTest
             double num = -25;
             double valorEsperado = double.Parse("NaN");
             // Act
-            double soma = CalculadoraCientifica.Ln(num);
+            double valorObtido = CalculadoraCientifica.Ln(num);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         [Fact]
         [Trait("CalculadoraCientifica", "Ln")]
@@ -270,9 +270,9 @@ namespace Trabalho_Final_FTSTest
             double num = 0;
             double valorEsperado = double.Parse("-∞");
             // Act
-            double soma = CalculadoraCientifica.Ln(num);
+            double valorObtido = CalculadoraCientifica.Ln(num);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
         #endregion
 

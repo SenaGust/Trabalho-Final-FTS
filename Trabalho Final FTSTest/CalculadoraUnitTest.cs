@@ -17,9 +17,9 @@ namespace Trabalho_Final_FTSTest
             double num2 = 3.1;
             double valorEsperado = 6;
             // Act
-            double soma = Calculadora.Somar(num1, num2);
+            double valorObtido = Calculadora.Somar(num1, num2);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
 
         [Fact]
@@ -31,9 +31,9 @@ namespace Trabalho_Final_FTSTest
             double num2 = -3.1;
             double valorEsperado = -6;
             // Act  
-            double soma = Calculadora.Somar(num1, num2);
+            double valorObtido = Calculadora.Somar(num1, num2);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
 
         [Fact]
@@ -45,9 +45,9 @@ namespace Trabalho_Final_FTSTest
             double num2 = -3.1;
             double valorEsperado = -0.2;
             // Act  
-            double soma = Calculadora.Somar(num1, num2);
+            double valorObtido = Calculadora.Somar(num1, num2);
             //Assert
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
 
         [Fact]
@@ -59,9 +59,9 @@ namespace Trabalho_Final_FTSTest
             double num2 = 1;
             double valorEsperado = 2;
             // Act  
-            double soma = Calculadora.Subtrair(num1, num2);
+            double valorObtido = Calculadora.Subtrair(num1, num2);
             //Assert  
-            Assert.Equal(valorEsperado, soma);
+            Assert.Equal(valorEsperado, valorObtido);
         }
 
         [Fact]
