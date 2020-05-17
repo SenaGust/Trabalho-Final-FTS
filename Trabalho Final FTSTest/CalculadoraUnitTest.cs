@@ -38,7 +38,7 @@ namespace Trabalho_Final_FTSTest
 
         [Fact]
         [Trait("Calculadora", "Somar")]
-        public void Somar_PositivoNegativo_RetornaDouble()
+        public void Somar_DoisDoublePositivoNegativo_RetornaDouble()
         {
             // Arrange
             double num1 = 2.9;
@@ -66,7 +66,7 @@ namespace Trabalho_Final_FTSTest
 
         [Fact]
         [Trait("Calculadora", "Multiplicar")]
-        public void Multiplicar_DoisDouble_RetornaDouble()
+        public void Multiplicar_DoisDoublePositivos_RetornaDouble()
         {
             //Arrange
             double num1 = 2;
@@ -79,6 +79,37 @@ namespace Trabalho_Final_FTSTest
             //Assert
             Assert.Equal(valorEsperado, multiplicar);
             
+        }
+        [Fact]
+        [Trait("Calculadora", "Multiplicar")]
+        public void Multiplicar_DoisDoubleNegativos_RetornaDouble()
+        {
+            //Arrange
+            double num1 = -2;
+            double num2 = -3;
+            double valorEsperado = 6;
+           
+            //Act
+            double multiplicar = Calculadora.Multiplicar(num1, num2);
+
+            //Assert
+            Assert.Equal(valorEsperado, multiplicar);
+        }
+
+        [Fact]
+        [Trait("Calculadora", "Multiplicar")]
+        public void Multiplicar_DoisDoublePositivoNegativo_RetornaDouble()
+        {
+            //Arrange
+            double num1 = -2;
+            double num2 = 3;
+            double valorEsperado = -6;
+
+            //Act
+            double multiplicar = Calculadora.Multiplicar(num1, num2);
+
+            //Assert
+            Assert.Equal(valorEsperado, multiplicar);
         }
 
         [Fact]

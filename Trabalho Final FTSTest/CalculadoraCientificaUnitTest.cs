@@ -8,6 +8,59 @@ namespace Trabalho_Final_FTSTest
 {
     public class CalculadoraCientificaUnitTest
     {
+
+        #region Logaritmo
+        #endregion
+
+        #region Seno
+        [Fact]
+        [Trait("CalculadoraCientifica", "Sen")]
+        public void Sen_DoublePositivo_RetornaDouble()
+        {
+            // Arrange
+            double num = 2;
+            double valorEsperado = 0.9093;
+
+            // Act
+            double sen = CalculadoraCientifica.Sen(num);
+
+            //Assert
+            Assert.Equal(valorEsperado, sen);
+
+        }
+
+        [Fact]
+        [Trait("CalculadoraCientifica", "Sen")]
+        public void Sen_DoubleNegativo_RetornaDouble()
+        {
+            // Arrange
+            double num = -2;
+            double valorEsperado = -0.9093;
+
+            // Act
+            double sen = CalculadoraCientifica.Sen(num);
+
+            //Assert
+            Assert.Equal(valorEsperado, sen);
+        }
+
+        [Fact]
+        [Trait("CalculadoraCientifica", "Sen")]
+        public void Sen_Zero_RetornaDouble()
+        {
+            // Arrange
+            double num = 0;
+            double valorEsperado = 0;
+
+            // Act
+            double sen = CalculadoraCientifica.Sen(num);
+
+            //Assert
+            Assert.Equal(valorEsperado, sen);
+        }
+        #endregion
+
+        #region Coseno
         [Fact]
         [Trait("CalculadoraCientifica", "Cos")]
         public void Cos_DoublePositivo_RetornaDouble()
@@ -44,6 +97,60 @@ namespace Trabalho_Final_FTSTest
             //Assert
             Assert.Equal(valorEsperado, soma);
         }
+        #endregion
+
+        #region Tangente
+        #endregion
+
+        #region Radiciação
+        [Fact]
+        [Trait("CalculadoraCientifica", "Radiciacao")]
+        public void Radiciacao_DoublePositivo_RetornaDouble()
+        {
+            // Arrange
+            double num = 72;
+            double valorEsperado = 8.4853;
+
+            // Act
+            double radiciacao = CalculadoraCientifica.Radiciacao(num);
+
+            //Assert
+            Assert.Equal(valorEsperado, radiciacao);
+
+        }
+
+        [Fact]
+        [Trait("CalculadoraCientifica", "Radiciacao")]
+        public void Radiciacao_DoubleNegativo_RetornaErro()
+        {
+            //Arrange
+            double num = -72;
+            double valorEsperado = double.NaN;
+            //Act 
+            double radiciacao = CalculadoraCientifica.Radiciacao(num);
+
+            //Assert
+            Assert.Equal(valorEsperado, radiciacao);
+        }
+
+        [Fact]
+        [Trait("CalculadoraCientifica", "Radiciacao")]
+        public void Radiciacao_zero_RetornaDouble()
+        {
+            // Arrange
+            double num = 0;
+            double valorEsperado = 0;
+
+            // Act
+            double radiciacao = CalculadoraCientifica.Radiciacao(num);
+
+            //Assert
+            Assert.Equal(valorEsperado, radiciacao);
+
+        }
+        #endregion
+
+        #region Potenciação
         [Fact]
         [Trait("CalculadoraCientifica", "Potenciacao")]
         public void Potenciacao_DoublePositivoEZero_RetornaDouble()
@@ -109,6 +216,28 @@ namespace Trabalho_Final_FTSTest
             //Assert
             Assert.Equal(valorEsperado, soma);
         }
+        #endregion
+
+        #region Porcentagem
+        #endregion
+
+        #region Pi
+        [Fact]
+        public void Pi_RetornaDouble()
+        {
+            // Arrange
+            double valorEsperado = 3.14159265359;
+
+            // Act
+            double pi = CalculadoraCientifica.Pi();
+
+            //Assert
+            Assert.Equal(valorEsperado, pi);
+
+        }
+        #endregion
+
+        #region Ln
         [Fact]
         [Trait("CalculadoraCientifica", "Ln")]
         public void Ln_DoublePositivo_RetornaDouble()
@@ -145,5 +274,7 @@ namespace Trabalho_Final_FTSTest
             //Assert
             Assert.Equal(valorEsperado, soma);
         }
+        #endregion
+
     }
 }

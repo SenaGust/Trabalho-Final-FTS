@@ -15,7 +15,7 @@ namespace Trabalho_Final_FTS
 
         public static double Sen(double a) //Lorena
         {
-            return Math.Sin(a);
+            return Math.Round(Math.Sin(a),4);
         }
 
         public static double Cos(double a) //Nathan
@@ -30,7 +30,7 @@ namespace Trabalho_Final_FTS
 
         public static double Radiciacao(double a) //Lorena
         {
-            return Math.Sqrt(a);
+            return Math.Round(Math.Sqrt(a),4);
         }
 
         public static double Potenciacao(double a,double b) //Nathan
@@ -45,7 +45,7 @@ namespace Trabalho_Final_FTS
 
         public static double Pi() //Lorena
         {
-            return Math.PI;
+            return Math.Round(Math.PI,12);
         }
 
         public static double Ln(double a) //Nathan
