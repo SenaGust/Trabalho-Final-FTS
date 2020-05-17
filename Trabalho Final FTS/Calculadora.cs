@@ -10,19 +10,19 @@ namespace Trabalho_Final_FTS
     {
         public static double Somar(double a, double b)
         {
-            return 0;
+            return Math.Round(a + b, 4);
         }
         public static double Subtrair(double a, double b)
         {
-            return a - b;
+            return Math.Round(a - b, 4);
         }
         public static double Multiplicar(double a, double b)
         {
-            return (a * b);
+            return Math.Round(a * b, 4);
         }
         public static double Dividir(double a, double b)
         {
-            return (a / b);
+            return Math.Round(a / b, 4);
         }
     }
 }
