@@ -20,7 +20,7 @@ namespace Trabalho_Final_FTS
 
         public static double Cos(double a) //Nathan
         {
-            return Math.Cos(a);
+            return Math.Round(Math.Cos(a), 4);
         }
 
         public static double Tan(double a) //João
@@ -35,7 +35,7 @@ namespace Trabalho_Final_FTS
 
         public static double Potenciacao(double a,double b) //Nathan
         {
-            return Math.Pow(a,b);
+            return Math.Round(Math.Pow(a,b), 4);
         }
 
         public static double Porcentagem(double a) //João
@@ -50,7 +50,7 @@ namespace Trabalho_Final_FTS
 
         public static double Ln(double a) //Nathan
         {
-            return Math.Log(a);
+            return Math.Round(Math.Log(a), 4);
         }
 
     }
