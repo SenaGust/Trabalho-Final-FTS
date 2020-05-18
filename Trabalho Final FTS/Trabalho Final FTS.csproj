@@ -62,6 +62,8 @@
     <Compile Include="Calculadora.cs" />
     <Compile Include="CalculadoraCientifica.cs" />
     <Compile Include="CalculadoraView.cs" />
+    <Compile Include="ConsoleWrapper.cs" />
+    <Compile Include="IConsole.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

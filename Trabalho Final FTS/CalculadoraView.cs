@@ -8,9 +8,17 @@ using System.Threading.Tasks;
 
 namespace Trabalho_Final_FTS
 {
-    class CalculadoraView
+    public class CalculadoraView
     {
-        private static bool useCientifica = false;
+        public bool useCientifica { get; set; }
+        public IConsole console { get; set; }
+
+        public CalculadoraView()
+        {
+            console = new ConsoleWrapper();
+            useCientifica = false;
+        }
+
         public void Iniciar() 
         {   
             int opcaoMenu = 0;
@@ -23,51 +31,51 @@ namespace Trabalho_Final_FTS
                 else
                     ExecutarCalculadoraSimples(opcaoMenu);
 
-                Console.ReadKey();
-                Console.Clear();
+                console.ReadKey();
+                console.Clear();
             }
         }
 
-        int MenuCientifica()
+        public int MenuCientifica()
         {
-            Console.WriteLine(".:Calculadora Cientifica:.");
+            console.WriteLine(".:Calculadora Cientifica:.");
             
-            Console.WriteLine("\t 1. Somar");
-            Console.WriteLine("\t 2. Subtrair");
-            Console.WriteLine("\t 3. Multiplicar");
-            Console.WriteLine("\t 4. Dividir");
-            Console.WriteLine("\t 5. Logaritmo");
-            Console.WriteLine("\t 6. Ln");
-            Console.WriteLine("\t 7. Seno");
-            Console.WriteLine("\t 8. Cosseno");
-            Console.WriteLine("\t 9. Tangente");
-            Console.WriteLine("\t10. Radiciação");
-            Console.WriteLine("\t11. Ponteciação");
-            Console.WriteLine("\t12. Porcentagem");
-            Console.WriteLine("\t13. Pi");
-            Console.WriteLine("\t14. Sair");
+            console.WriteLine("\t 1. Somar");
+            console.WriteLine("\t 2. Subtrair");
+            console.WriteLine("\t 3. Multiplicar");
+            console.WriteLine("\t 4. Dividir");
+            console.WriteLine("\t 5. Logaritmo");
+            console.WriteLine("\t 6. Ln");
+            console.WriteLine("\t 7. Seno");
+            console.WriteLine("\t 8. Cosseno");
+            console.WriteLine("\t 9. Tangente");
+            console.WriteLine("\t10. Radiciação");
+            console.WriteLine("\t11. Ponteciação");
+            console.WriteLine("\t12. Porcentagem");
+            console.WriteLine("\t13. Pi");
+            console.WriteLine("\t14. Sair");
             
-            Console.Write("Escolha uma das opções acima: ");
+            console.Write("Escolha uma das opções acima: ");
 
-            return Convert.ToInt32(Console.ReadLine());
+            return Convert.ToInt32(console.ReadLine());
         }
-        int MenuSimples()
+        public int MenuSimples()
         {
-            Console.WriteLine("\t\t.:Calculadora:.");
+            console.WriteLine("\t\t.:Calculadora:.");
 
-            Console.WriteLine("\t1. Somar");
-            Console.WriteLine("\t2. Subtrair");
-            Console.WriteLine("\t3. Multiplicar");
-            Console.WriteLine("\t4. Dividir");
-            Console.WriteLine("\t5. Calculadora Científica");
-            Console.WriteLine("\t6. Sair");
+            console.WriteLine("\t1. Somar");
+            console.WriteLine("\t2. Subtrair");
+            console.WriteLine("\t3. Multiplicar");
+            console.WriteLine("\t4. Dividir");
+            console.WriteLine("\t5. Calculadora Científica");
+            console.WriteLine("\t6. Sair");
             
-            Console.Write("Escolha uma das opções acima: ");
+            console.Write("Escolha uma das opções acima: ");
             
-            return Convert.ToInt32(Console.ReadLine());
+            return Convert.ToInt32(console.ReadLine());
         }
 
-        void ExecutarCalculadoraSimples(int opcao)
+        public void ExecutarCalculadoraSimples(int opcao)
         {
             double a, b;
             Func<double, double, double> funcao;
@@ -80,7 +88,7 @@ namespace Trabalho_Final_FTS
 
                     funcao = (x, y) => Calculadora.Somar(x, y);
 
-                    Console.WriteLine("O resultado é " + funcao(a, b) + ".");
+                    console.WriteLine("O resultado é " + funcao(a, b) + ".");
                     break;
 
                 case 2:
@@ -89,7 +97,7 @@ namespace Trabalho_Final_FTS
 
                     funcao = (x, y) => Calculadora.Subtrair(x, y);
 
-                    Console.WriteLine("O resultado é " + funcao(a, b) + ".");
+                    console.WriteLine("O resultado é " + funcao(a, b) + ".");
                     break;
 
                 case 3:
@@ -98,7 +106,7 @@ namespace Trabalho_Final_FTS
 
                     funcao = (x, y) => Calculadora.Multiplicar(x, y);
 
-                    Console.WriteLine("O resultado é " + funcao(a, b) + ".");
+                    console.WriteLine("O resultado é " + funcao(a, b) + ".");
                     break;
 
                 case 4:
@@ -107,23 +115,23 @@ namespace Trabalho_Final_FTS
 
                     funcao = (x, y) => Calculadora.Dividir(x, y);
 
-                    Console.WriteLine("O resultado é " + funcao(a, b) + ".");
+                    console.WriteLine("O resultado é " + funcao(a, b) + ".");
                     break;
 
                 case 5:
                     useCientifica = true;
 
-                    Console.WriteLine("Abrindo calculadora cientifica...");
+                    console.WriteLine("Abrindo calculadora cientifica...");
                     break;
                 case 6:
-                    Console.WriteLine("Encerrando o programa...");
+                    console.WriteLine("Encerrando o programa...");
                     break;
                 default:
-                    Console.WriteLine("Escolha outra opção.");
+                    console.WriteLine("Escolha outra opção.");
                     break;
             }
         }
-        void ExecutarCalculadoraCientifica(int opcao)
+        public void ExecutarCalculadoraCientifica(int opcao)
         {
             double a, b;
             Func<double, double> funcao1;
@@ -138,7 +146,7 @@ namespace Trabalho_Final_FTS
 
                     funcao2 = (x, y) => CalculadoraCientifica.Somar(x, y);
 
-                    Console.WriteLine("O resultado é " + funcao2(a, b) + ".");
+                    console.WriteLine("O resultado é " + funcao2(a, b) + ".");
                     break;
 
                 case 2:
@@ -147,7 +155,7 @@ namespace Trabalho_Final_FTS
 
                     funcao2 = (x, y) => CalculadoraCientifica.Subtrair(x, y);
 
-                    Console.WriteLine("O resultado é " + funcao2(a, b) + ".");
+                    console.WriteLine("O resultado é " + funcao2(a, b) + ".");
                     break;
 
                 case 3:
@@ -156,7 +164,7 @@ namespace Trabalho_Final_FTS
 
                     funcao2 = (x, y) => CalculadoraCientifica.Multiplicar(x,y);
 
-                    Console.WriteLine("O resultado é " + funcao2(a, b) + ".");
+                    console.WriteLine("O resultado é " + funcao2(a, b) + ".");
                     break;
 
                 case 4:
@@ -165,7 +173,7 @@ namespace Trabalho_Final_FTS
 
                     funcao2 = (x, y) => CalculadoraCientifica.Dividir(x, y);
 
-                    Console.WriteLine("O resultado é " + funcao2(a, b) + ".");
+                    console.WriteLine("O resultado é " + funcao2(a, b) + ".");
                     break;
 
                 case 5:
@@ -173,42 +181,42 @@ namespace Trabalho_Final_FTS
 
                     funcao1 = (x) => CalculadoraCientifica.Logaritmo(x);
 
-                    Console.WriteLine("O resultado é " + funcao1(a) + ".");
+                    console.WriteLine("O resultado é " + funcao1(a) + ".");
                     break;
                 case 6:
                     a = ReceberValor();
 
                     funcao1 = (x) => CalculadoraCientifica.Ln(x);
 
-                    Console.WriteLine("O resultado é " + funcao1(a) + ".");
+                    console.WriteLine("O resultado é " + funcao1(a) + ".");
                     break;
                 case 7:
                     a = ReceberValor();
 
                     funcao1 = (x) => CalculadoraCientifica.Sen(x);
 
-                    Console.WriteLine("O resultado é " + funcao1(a) + ".");
+                    console.WriteLine("O resultado é " + funcao1(a) + ".");
                     break;
                 case 8:
                     a = ReceberValor();
 
                     funcao1 = (x) => CalculadoraCientifica.Cos(x);
 
-                    Console.WriteLine("O resultado é " + funcao1(a) + ".");
+                    console.WriteLine("O resultado é " + funcao1(a) + ".");
                     break;
                 case 9:
                     a = ReceberValor();
 
                     funcao1 = (x) => CalculadoraCientifica.Tan(x);
 
-                    Console.WriteLine("O resultado é " + funcao1(a) + "."); ;
+                    console.WriteLine("O resultado é " + funcao1(a) + "."); ;
                     break;
                 case 10:
                     a = ReceberValor();
 
                     funcao1 = (x) => CalculadoraCientifica.Radiciacao(x);
 
-                    Console.WriteLine("O resultado é " + funcao1(a) + ".");
+                    console.WriteLine("O resultado é " + funcao1(a) + ".");
                     break;
                 case 11:
                     a = ReceberValor();
@@ -216,34 +224,34 @@ namespace Trabalho_Final_FTS
 
                     funcao2 = (x, y) => CalculadoraCientifica.Potenciacao(x, y);
 
-                    Console.WriteLine("O resultado é " + funcao2(a, b) + ".");
+                    console.WriteLine("O resultado é " + funcao2(a, b) + ".");
                     break;
                 case 12:
                     a = ReceberValor();
 
                     funcao1 = (x) => CalculadoraCientifica.Porcentagem(x);
 
-                    Console.WriteLine("O resultado é " + funcao1(a) + ".");
+                    console.WriteLine("O resultado é " + funcao1(a) + ".");
                     break;
                 case 13:
                     Func<double> funcao = () => CalculadoraCientifica.Pi();
 
-                    Console.WriteLine("O resultado é " + funcao() + ".");
+                    console.WriteLine("O resultado é " + funcao() + ".");
                     break;
                 case 14:
 
-                    Console.WriteLine("Encerrando o programa...");
+                    console.WriteLine("Encerrando o programa...");
                     break;
                 default:
-                    Console.WriteLine("Escolha outra opção.");
+                    console.WriteLine("Escolha outra opção.");
                     break;
             }
         }
 
-        double ReceberValor()
+       public double ReceberValor()
         {
-            Console.Write("Insira um valor: ");
-            return Convert.ToDouble(Console.ReadLine());
+            console.Write("Insira um valor: ");
+            return Convert.ToDouble(console.ReadLine());
         }
     }
 }
