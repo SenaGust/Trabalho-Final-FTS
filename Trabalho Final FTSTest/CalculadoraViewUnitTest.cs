@@ -17,7 +17,22 @@ namespace Trabalho_Final_FTSTest
         [Trait("CalculadoraView", "Iniciar")]
         public void Iniciar_IniciarCalculadoraSimples_ChamarExecutarCalculadoraSimples()
         {
-            
+            //Arrange
+            CalculadoraView calculadoraView = Substitute.ForPartsOf<CalculadoraView>();
+            calculadoraView.console = Substitute.For<IConsole>();
+
+            calculadoraView.console.ReadLine().Returns("2", "6"); //digitar a opção 2 (subtrair) e depois digitar a opção 6 (fechar)
+            calculadoraView.console.ReadKey().Returns("");
+
+            //Act
+            calculadoraView.Iniciar();
+
+            //Assert
+            calculadoraView.DidNotReceive().MenuCientifica(); //Chamamos o menu da calculadora cientifica
+            calculadoraView.Received().MenuSimples(); //Não chamamos o menu da calculadora simples
+
+            calculadoraView.Received().ExecutarCalculadoraSimples(2); //Chamamos o ExecutarCalculadoraCientifica com a opção 2
+            calculadoraView.Received().ExecutarCalculadoraSimples(6); //Chamamos o ExecutarCalculadoraCientifica com a opção 6
         }
         [Fact]
         [Trait("CalculadoraView", "Iniciar")]
@@ -37,7 +52,7 @@ namespace Trabalho_Final_FTSTest
 
             //Assert
             calculadoraView.Received().MenuCientifica(); //Chamamos o menu da calculadora cientifica
-            calculadoraView.Received().MenuSimples(); //Não chamamos o menu da calculadora simples
+            calculadoraView.DidNotReceive().MenuSimples(); //Não chamamos o menu da calculadora simples
 
             calculadoraView.Received().ExecutarCalculadoraCientifica(5); //Chamamos o ExecutarCalculadoraCientifica com a opção 5
             calculadoraView.Received().ExecutarCalculadoraCientifica(14); //Chamamos o ExecutarCalculadoraCientifica com a opção 14
