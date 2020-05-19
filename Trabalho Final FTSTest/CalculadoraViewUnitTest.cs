@@ -18,8 +18,6 @@ namespace Trabalho_Final_FTSTest
         public void Iniciar_IniciarCalculadoraSimples_ChamarExecutarCalculadoraSimples()
         {
             
-
-
         }
         [Fact]
         [Trait("CalculadoraView", "Iniciar")]
@@ -27,19 +25,19 @@ namespace Trabalho_Final_FTSTest
         {
             //Não funciona
             //Arrange
-            CalculadoraView calculadoraView = new CalculadoraView();
+            CalculadoraView calculadoraView = Substitute.ForPartsOf<CalculadoraView>();
             calculadoraView.console = Substitute.For<IConsole>();
             calculadoraView.useCientifica = true;
 
             calculadoraView.console.ReadLine().Returns("5","14"); //digitar a opção 5 (logaritmo) e depois digitar a opção 14 (fechar)
             calculadoraView.console.ReadKey().Returns("");
-            
+
             //Act
             calculadoraView.Iniciar();
 
             //Assert
             calculadoraView.Received().MenuCientifica(); //Chamamos o menu da calculadora cientifica
-            calculadoraView.DidNotReceive().MenuSimples(); //Não chamamos o menu da calculadora simples
+            calculadoraView.Received().MenuSimples(); //Não chamamos o menu da calculadora simples
 
             calculadoraView.Received().ExecutarCalculadoraCientifica(5); //Chamamos o ExecutarCalculadoraCientifica com a opção 5
             calculadoraView.Received().ExecutarCalculadoraCientifica(14); //Chamamos o ExecutarCalculadoraCientifica com a opção 14
@@ -47,13 +45,32 @@ namespace Trabalho_Final_FTSTest
         #endregion
 
         #region Menu Calculadora Simples
+        [Fact]
+        [Trait("CalculadoraView", "MenuSimples")]
+        public void MenuSimples_ExibirMenuSimples_Retornar2()
+        {
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.console = Substitute.For<IConsole>();
+            int retornoEsperado = 2;
+            calculadoraView.console.ReadLine().Returns("2");
 
+            int retorno = calculadoraView.MenuSimples();
+
+            calculadoraView.console.Received().WriteLine("\t\t.:Calculadora:.");
+            calculadoraView.console.Received().WriteLine("\t1. Somar");
+            calculadoraView.console.Received().WriteLine("\t2. Subtrair");
+            calculadoraView.console.Received().WriteLine("\t3. Multiplicar");
+            calculadoraView.console.Received().WriteLine("\t4. Dividir");
+            calculadoraView.console.Received().WriteLine("\t5. Calculadora Científica");
+            calculadoraView.console.Received().WriteLine("\t6. Sair");
+            Assert.Equal(retornoEsperado, retorno);
+        }
         #endregion
 
         #region Menu Calculadora Cientifica
         [Fact]
         [Trait("CalculadoraView", "MenuCientifica")]
-        public void MenuCientifica_ExibirMenu_Retornar1()
+        public void MenuCientifica_ExibirMenuCientifica_Retornar1()
         {
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
