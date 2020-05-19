@@ -28,8 +28,8 @@ namespace Trabalho_Final_FTSTest
             calculadoraView.Iniciar();
 
             //Assert
-            calculadoraView.DidNotReceive().MenuCientifica(); //Chamamos o menu da calculadora cientifica
-            calculadoraView.Received().MenuSimples(); //Não chamamos o menu da calculadora simples
+            calculadoraView.DidNotReceive().MenuCientifica(); //Não chamamos o menu da calculadora cientifica
+            calculadoraView.Received().MenuSimples(); //Chamamos o menu da calculadora simples
 
             calculadoraView.Received().ExecutarCalculadoraSimples(2); //Chamamos o ExecutarCalculadoraCientifica com a opção 2
             calculadoraView.Received().ExecutarCalculadoraSimples(6); //Chamamos o ExecutarCalculadoraCientifica com a opção 6
@@ -38,7 +38,6 @@ namespace Trabalho_Final_FTSTest
         [Trait("CalculadoraView", "Iniciar")]
         public void Iniciar_IniciarCalculadoraCientifica_ChamarExecutarCalculadoraCientifica()
         {
-            //Não funciona
             //Arrange
             CalculadoraView calculadoraView = Substitute.ForPartsOf<CalculadoraView>();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -53,7 +52,6 @@ namespace Trabalho_Final_FTSTest
             //Assert
             calculadoraView.Received().MenuCientifica(); //Chamamos o menu da calculadora cientifica
             calculadoraView.DidNotReceive().MenuSimples(); //Não chamamos o menu da calculadora simples
-
             calculadoraView.Received().ExecutarCalculadoraCientifica(5); //Chamamos o ExecutarCalculadoraCientifica com a opção 5
             calculadoraView.Received().ExecutarCalculadoraCientifica(14); //Chamamos o ExecutarCalculadoraCientifica com a opção 14
         }
