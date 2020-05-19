@@ -115,14 +115,6 @@ namespace Trabalho_Final_FTSTest
         }
         #endregion
 
-        #region Executar Calculadora Simples
-
-        #endregion
-
-        #region Executar Calculadora Cientifica
-
-        #endregion
-
         #region Receber Valores
 
         [Fact]
