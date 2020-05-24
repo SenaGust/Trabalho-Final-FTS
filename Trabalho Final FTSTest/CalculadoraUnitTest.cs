@@ -52,12 +52,40 @@ namespace Trabalho_Final_FTSTest
 
         [Fact]
         [Trait("Calculadora", "Subtrair")]
-        public void Subtrair_DoisDouble_RetornaDouble()
+        public void Subtrair_DoisDoublePositivos_RetornaDouble()
         {
             // Arrange  
             double num1 = 3;
             double num2 = 1;
             double valorEsperado = 2;
+            // Act  
+            double valorObtido = Calculadora.Subtrair(num1, num2);
+            //Assert  
+            Assert.Equal(valorEsperado, valorObtido);
+        }
+
+        [Fact]
+        [Trait("Calculadora", "Subtrair")]
+        public void Subtrair_DoisDoubleNegativos_RetornaDouble()
+        {
+            // Arrange  
+            double num1 = -3.2;
+            double num2 = -1.5;
+            double valorEsperado = -1.7;
+            // Act  
+            double valorObtido = Calculadora.Subtrair(num1, num2);
+            //Assert  
+            Assert.Equal(valorEsperado, valorObtido);
+        }
+
+        [Fact]
+        [Trait("Calculadora", "Subtrair")]
+        public void Subtrair_DoisDoubleNegativoPositivo_RetornaDouble()
+        {
+            // Arrange  
+            double num1 = -3;
+            double num2 = 2.5;
+            double valorEsperado = -5.5;
             // Act  
             double valorObtido = Calculadora.Subtrair(num1, num2);
             //Assert  
