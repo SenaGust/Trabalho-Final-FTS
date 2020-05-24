@@ -301,7 +301,7 @@ namespace Trabalho_Final_FTSTest
         #region Porcentagem
         [Fact]
         [Trait("CalculadoraCientifica", "Porcentagem")]
-        public void Porcentagem_Double_RetornaDouble()
+        public void Porcentagem_DoublePositivo_RetornaDouble()
         {
             // Arrange
             double num = 25.5;
@@ -311,6 +311,20 @@ namespace Trabalho_Final_FTSTest
             // Assert
             Assert.Equal(valorEsperado, valorEsperado);
         }
+
+        [Fact]
+        [Trait("CalculadoraCientifica", "Porcentagem")]
+        public void Porcentagem_DoubleNegativo_RetornaDouble()
+        {
+            // Arrange
+            double num = -25.5;
+            double valorEsperado = -0.255;
+            // Act
+            double valorObtido = CalculadoraCientifica.Porcentagem(num);
+            // Assert
+            Assert.Equal(valorEsperado, valorEsperado);
+        }
+
         #endregion
 
         #region Pi

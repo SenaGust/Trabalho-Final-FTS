@@ -11,7 +11,7 @@ namespace Trabalho_Final_FTSTest
 {
     public class CalculadoraViewIntegrationTest
     {
-        #region Executar Calculadora Simples
+            #region Executar Calculadora Simples
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraSimples")]
         public void ExecutarCalculadora_RealizaSomaDouble_RetornaDouble()
