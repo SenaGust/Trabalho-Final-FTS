@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trabalho Final FTS", "Trabalho Final FTS\Trabalho Final FTS.csproj", "{CCC1E322-1F3E-4E0D-903D-771F3A6C1C4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trabalho Final FTSTest", "Trabalho Final FTSTest\Trabalho Final FTSTest.csproj", "{330A53CF-279E-419F-8AC5-B2BBC26B69E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trabalho Final FTSTest", "Trabalho Final FTSTest\Trabalho Final FTSTest.csproj", "{330A53CF-279E-419F-8AC5-B2BBC26B69E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
