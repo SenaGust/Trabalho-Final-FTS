@@ -387,7 +387,7 @@ namespace Trabalho_Final_FTS
             string valores = console.ReadLine();
             string[] aux = valores.Split(' ');
 
-            double[] vetorValores = new double[valores.Length];
+            double[] vetorValores = new double[aux.Length];
 
             for (int i = 0; i < aux.Length; i++)
             {

@@ -18,13 +18,13 @@ namespace Trabalho_Final_FTSTest
         {
             //Arrange
             double[] numeros = {15.3, 15.4, 8.4};
-            double mediaEsperada = 13.7;
+            double mediaEsperada = 13.0333;
 
             //Act
             double media = CalculadoraEstatistica.Media(numeros);
 
             //Assert
-            Assert.Equal(media, mediaEsperada);
+            Assert.Equal(mediaEsperada, media);
         }
 
         [Fact]
@@ -93,13 +93,13 @@ namespace Trabalho_Final_FTSTest
         {
             //Arrange
             double[] numeros = { 15.75, 20, 0, 1.5, 5.25, -1.5 };
-            double valorEsperado = 79.9916;
+            double valorEsperado = 79.9917;
 
             //Act
             double variancia = CalculadoraEstatistica.Variancia(numeros);
 
             //Assert
-            Assert.Equal(variancia, valorEsperado);
+            Assert.Equal(valorEsperado, variancia);
         }
     }
 }

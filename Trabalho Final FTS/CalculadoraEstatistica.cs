@@ -55,7 +55,7 @@ namespace Trabalho_Final_FTS
             double variancia = 0, media = Media(conjuntoNumeros);
 
             for(int i = 0; i < conjuntoNumeros.Length; i++)
-                variancia += CalculadoraCientifica.Radiciacao(conjuntoNumeros[i] - media);
+                variancia += CalculadoraCientifica.Potenciacao(conjuntoNumeros[i] - media, 2);
 
             return Math.Round(variancia /= (conjuntoNumeros.Length - 1), 4);
         }
