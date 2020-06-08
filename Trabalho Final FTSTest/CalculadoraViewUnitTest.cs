@@ -21,7 +21,7 @@ namespace Trabalho_Final_FTSTest
             CalculadoraView calculadoraView = Substitute.ForPartsOf<CalculadoraView>();
             calculadoraView.console = Substitute.For<IConsole>();
 
-            calculadoraView.console.ReadLine().Returns("2", "6"); //digitar a opção 2 (subtrair) e depois digitar a opção 6 (fechar)
+            calculadoraView.console.ReadLine().Returns("2", "7"); //digitar a opção 2 (subtrair) e depois digitar a opção 6 (fechar)
             calculadoraView.console.ReadKey().Returns("");
 
             //Act
@@ -32,7 +32,7 @@ namespace Trabalho_Final_FTSTest
             calculadoraView.Received().MenuSimples(); //Chamamos o menu da calculadora simples
 
             calculadoraView.Received().ExecutarCalculadoraSimples(2); //Chamamos o ExecutarCalculadoraCientifica com a opção 2
-            calculadoraView.Received().ExecutarCalculadoraSimples(6); //Chamamos o ExecutarCalculadoraCientifica com a opção 6
+            calculadoraView.Received().ExecutarCalculadoraSimples(7); //Chamamos o ExecutarCalculadoraCientifica com a opção 6
         }
         [Fact]
         [Trait("CalculadoraView", "Iniciar")]
@@ -41,7 +41,7 @@ namespace Trabalho_Final_FTSTest
             //Arrange
             CalculadoraView calculadoraView = Substitute.ForPartsOf<CalculadoraView>();
             calculadoraView.console = Substitute.For<IConsole>();
-            calculadoraView.useCientifica = true;
+//            calculadoraView.useCientifica = true;
 
             calculadoraView.console.ReadLine().Returns("5","14"); //digitar a opção 5 (logaritmo) e depois digitar a opção 14 (fechar)
             calculadoraView.console.ReadKey().Returns("");
@@ -75,7 +75,8 @@ namespace Trabalho_Final_FTSTest
             calculadoraView.console.Received().WriteLine("\t3. Multiplicar");
             calculadoraView.console.Received().WriteLine("\t4. Dividir");
             calculadoraView.console.Received().WriteLine("\t5. Calculadora Científica");
-            calculadoraView.console.Received().WriteLine("\t6. Sair");
+            calculadoraView.console.Received().WriteLine("\t6. Calculadora Estatística");
+            calculadoraView.console.Received().WriteLine("\t7. Sair");
             Assert.Equal(retornoEsperado, retorno);
         }
         #endregion

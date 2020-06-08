@@ -23,7 +23,7 @@ namespace Trabalho_Final_FTSTest
             double resultadoEsperado = 6.8;
 
             // Act            
-            calculadoraView.console.ReadLine().Returns("1", a, b, "6"); // Simulando o return do CalculadoraView.MenuSimples()
+            calculadoraView.console.ReadLine().Returns("1", a, b, "7"); // Simulando o return do CalculadoraView.MenuSimples()
             calculadoraView.console.ReadKey().Returns("");
             calculadoraView.Iniciar();
 
