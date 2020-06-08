@@ -1,4 +1,4 @@
-﻿        using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -10,24 +10,26 @@ namespace Trabalho_Final_FTS
 {
     public class CalculadoraView
     {
-        public bool useCientifica { get; set; }
         public IConsole console { get; set; }
 
         public CalculadoraView()
         {
             console = new ConsoleWrapper();
-            useCientifica = false;
         }
 
-        public void Iniciar() 
-        {   
+        public void Iniciar()
+        {
             int opcaoMenu = 0;
-            while (opcaoMenu != (useCientifica ? 14 : 6))
+            while (opcaoMenu != 14 && opcaoMenu != 7 && opcaoMenu != 11)
             {
-                opcaoMenu = useCientifica ? MenuCientifica() : MenuSimples();
+                opcaoMenu = MenuSimples();
 
-                if (useCientifica)
-                    ExecutarCalculadoraCientifica(opcaoMenu);
+                if (opcaoMenu == 5)
+                    ExecutarCalculadoraCientifica(MenuCientifica());
+                else if (opcaoMenu == 6)
+                {
+                    ExecutarCalculadoraEstatistica(MenuEstatistica());
+                }
                 else
                     ExecutarCalculadoraSimples(opcaoMenu);
 
@@ -36,7 +38,7 @@ namespace Trabalho_Final_FTS
             }
         }
 
-        public int MenuEstatica()
+        public int MenuEstatistica()
         {
             console.WriteLine(".:Calculadora Estatística:.");
 
@@ -60,7 +62,7 @@ namespace Trabalho_Final_FTS
         public int MenuCientifica()
         {
             console.WriteLine(".:Calculadora Cientifica:.");
-            
+
             console.WriteLine("\t 1. Somar");
             console.WriteLine("\t 2. Subtrair");
             console.WriteLine("\t 3. Multiplicar");
@@ -71,15 +73,16 @@ namespace Trabalho_Final_FTS
             console.WriteLine("\t 8. Cosseno");
             console.WriteLine("\t 9. Tangente");
             console.WriteLine("\t10. Radiciação");
-            console.WriteLine("\t11. Potenciação");
+            console.WriteLine("\t11. Ponteciação");
             console.WriteLine("\t12. Porcentagem");
             console.WriteLine("\t13. Pi");
             console.WriteLine("\t14. Sair");
-            
+
             console.Write("Escolha uma das opções acima: ");
 
             return Convert.ToInt32(console.ReadLine());
-        }        
+        }
+
         public int MenuSimples()
         {
             console.WriteLine("\t\t.:Calculadora:.");
@@ -91,9 +94,9 @@ namespace Trabalho_Final_FTS
             console.WriteLine("\t5. Calculadora Científica");
             console.WriteLine("\t6. Calculadora Estatística");
             console.WriteLine("\t7. Sair");
-            
+
             console.Write("Escolha uma das opções acima: ");
-            
+
             return Convert.ToInt32(console.ReadLine());
         }
 
@@ -141,11 +144,12 @@ namespace Trabalho_Final_FTS
                     break;
 
                 case 5:
-                    useCientifica = true;
-
                     console.WriteLine("Abrindo calculadora cientifica...");
                     break;
                 case 6:
+                    console.WriteLine("Abrindo calculadora estatistica...");
+                    break;
+                case 7:
                     console.WriteLine("Digite qualquer tecla para encerrar o programa...");
                     break;
                 default:
@@ -153,6 +157,7 @@ namespace Trabalho_Final_FTS
                     break;
             }
         }
+
         public void ExecutarCalculadoraCientifica(int opcao)
         {
             double a, b;
@@ -184,7 +189,7 @@ namespace Trabalho_Final_FTS
                     a = ReceberValor();
                     b = ReceberValor();
 
-                    funcao2 = (x, y) => CalculadoraCientifica.Multiplicar(x,y);
+                    funcao2 = (x, y) => CalculadoraCientifica.Multiplicar(x, y);
 
                     console.WriteLine("O resultado é " + funcao2(a, b) + ".");
                     break;
@@ -376,7 +381,7 @@ namespace Trabalho_Final_FTS
         }
 
         public double[] ReceberValores()
-        {            
+        {
             console.Write("Insira os valores separados por um espaço: ");
             string valores = console.ReadLine();
             string[] aux = valores.Split(' ');
