@@ -278,7 +278,7 @@ namespace Trabalho_Final_FTSTest
 
         #region Calculadora Estatistica
         [Fact]
-        [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
+        [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_MediaVetorDouble_RetornaDouble()
         {
             //Arrange
@@ -293,7 +293,7 @@ namespace Trabalho_Final_FTSTest
         }
 
         [Fact]
-        [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
+        [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_MinimoVetorDouble_RetornaDouble()
         {
             //Arrange
@@ -308,7 +308,7 @@ namespace Trabalho_Final_FTSTest
         }
 
         [Fact]
-        [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
+        [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_MaximoVetorDouble_RetornaDouble()
         {
             //Arrange
@@ -323,7 +323,7 @@ namespace Trabalho_Final_FTSTest
         }
 
         [Fact]
-        [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
+        [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_MedianaVetorDouble_RetornaDouble()
         {
             //Arrange
@@ -338,7 +338,7 @@ namespace Trabalho_Final_FTSTest
         }
 
         [Fact]
-        [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
+        [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_DesvioPadraoVetorDouble_RetornaDouble()
         {
             //Arrange
@@ -353,7 +353,7 @@ namespace Trabalho_Final_FTSTest
         }
 
         [Fact]
-        [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
+        [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_VarianciaVetorDouble_RetornaDouble()
         {
             //Arrange
