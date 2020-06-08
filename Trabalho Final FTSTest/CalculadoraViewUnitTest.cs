@@ -41,7 +41,7 @@ namespace Trabalho_Final_FTSTest
             //Arrange
             CalculadoraView calculadoraView = Substitute.ForPartsOf<CalculadoraView>();
             calculadoraView.console = Substitute.For<IConsole>();
-            calculadoraView.useCientifica = true;
+            //calculadoraView.useCientifica = true;
 
             calculadoraView.console.ReadLine().Returns("5","14"); //digitar a opção 5 (logaritmo) e depois digitar a opção 14 (fechar)
             calculadoraView.console.ReadKey().Returns("");
