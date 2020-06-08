@@ -10,6 +10,8 @@ namespace Trabalho_Final_FTS
     {
         public static double Media(double [] conjuntoNumeros)
         {
+            // somar todos os valores
+            // retornar o valor correto
             throw new NotImplementedException();
         }
 
