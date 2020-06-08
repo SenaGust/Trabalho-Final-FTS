@@ -42,12 +42,7 @@ namespace Trabalho_Final_FTS
 
         public static double DesvioPadrao(double[] conjuntoNumeros)
         {
-            double somaTotalMedias = 0;
-
-            for (int i = 0; i < conjuntoNumeros.Length; i++)
-                somaTotalMedias += Math.Pow(conjuntoNumeros[i] - (conjuntoNumeros.Sum() / conjuntoNumeros.Length), 2);
-
-            return Math.Round(Math.Sqrt(somaTotalMedias / conjuntoNumeros.Length), 4);
+            return Math.Round(Math.Sqrt(Variancia(conjuntoNumeros)), 4);
         }
 
         public static double Variancia(double[] conjuntoNumeros)

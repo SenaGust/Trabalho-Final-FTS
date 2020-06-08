@@ -36,10 +36,10 @@ namespace Trabalho_Final_FTSTest
             double valorEsperado = -1.5;
 
             //Act
-            double minimo = CalculadoraEstatistica.Media(numeros);
+            double minimo = CalculadoraEstatistica.Minimo(numeros);
 
             //Assert
-            Assert.Equal(minimo, valorEsperado);
+            Assert.Equal(valorEsperado, minimo);
         }
 
         [Fact]
@@ -69,7 +69,7 @@ namespace Trabalho_Final_FTSTest
             double mediana = CalculadoraEstatistica.Mediana(valores);
 
             //Assert
-            Assert.Equal(mediana, valorEsperado);
+            Assert.Equal(valorEsperado, mediana);
         }
 
         [Fact]
@@ -78,13 +78,13 @@ namespace Trabalho_Final_FTSTest
         {
             //Arrange
             double[] numeros = { 15.3, 15.4, 8.4 };
-            double desvioPadraoEsperado = 3.2765;
+            double desvioPadraoEsperado = 4.0129;
 
             //Act
-            double desvioPadrao = CalculadoraEstatistica.Media(numeros);
+            double desvioPadrao = CalculadoraEstatistica.DesvioPadrao(numeros);
 
             //Assert
-            Assert.Equal(desvioPadrao, desvioPadraoEsperado);
+            Assert.Equal(desvioPadraoEsperado, desvioPadrao);
         }
 
         [Fact]
