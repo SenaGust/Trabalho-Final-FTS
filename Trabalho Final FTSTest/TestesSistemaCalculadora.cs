@@ -343,90 +343,108 @@ namespace Trabalho_Final_FTSTest
         [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_MediaVetorDouble_RetornaDouble()
         {
-            //Arrange
-            double[] numeros = { 15.3, 15.4, 8.4 };
-            double mediaEsperada = 13.0333;
+            //Arrange           
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.console = Substitute.For<IConsole>();
+            double resultadoEsperado = 13.0333;
 
             //Act
-            double media = CalculadoraEstatistica.Media(numeros);
+            calculadoraView.console.ReadLine().Returns("6", "5", "15.3 15.4 8.4", "11");
+            calculadoraView.console.ReadKey().Returns("");
+            calculadoraView.Iniciar();
 
             //Assert
-            Assert.Equal(mediaEsperada, media);
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_MinimoVetorDouble_RetornaDouble()
         {
-            //Arrange
-            double[] numeros = { 15.75, 20, 0, 1.5, 5.25, -1.5 };
-            double valorEsperado = -1.5;
+            //Arrange           
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.console = Substitute.For<IConsole>();
+            double resultadoEsperado = -1.5;
 
             //Act
-            double minimo = CalculadoraEstatistica.Minimo(numeros);
+            calculadoraView.console.ReadLine().Returns("6", "6", "15.75 20 0 1.5 5.25 -1.5", "11");
+            calculadoraView.console.ReadKey().Returns("");
+            calculadoraView.Iniciar();
 
             //Assert
-            Assert.Equal(valorEsperado, minimo);
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_MaximoVetorDouble_RetornaDouble()
         {
-            //Arrange
-            double[] numeros = { 12, 8, 25, 5 };
-            double valorEsperado = 25;
+            //Arrange           
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.console = Substitute.For<IConsole>();
+            double resultadoEsperado = 25;
 
             //Act
-            double maximo = CalculadoraEstatistica.Maximo(numeros);
+            calculadoraView.console.ReadLine().Returns("6", "7", "12 8 25 5", "11");
+            calculadoraView.console.ReadKey().Returns("");
+            calculadoraView.Iniciar();
 
             //Assert
-            Assert.Equal(valorEsperado, maximo);
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_MedianaVetorDouble_RetornaDouble()
         {
-            //Arrange
-            double[] valores = { 20.0, 10.0, 50.0, 7.0, 8.0 };
-            double valorEsperado = 10.0;
+            //Arrange           
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.console = Substitute.For<IConsole>();
+            double resultadoEsperado = 10;
 
             //Act
-            double mediana = CalculadoraEstatistica.Mediana(valores);
+            calculadoraView.console.ReadLine().Returns("6", "8", "20.0 10.0 50.0 7.0 8.0", "11");
+            calculadoraView.console.ReadKey().Returns("");
+            calculadoraView.Iniciar();
 
             //Assert
-            Assert.Equal(valorEsperado, mediana);
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_DesvioPadraoVetorDouble_RetornaDouble()
         {
-            //Arrange
-            double[] numeros = { 15.3, 15.4, 8.4 };
-            double desvioPadraoEsperado = 4.0129;
+            //Arrange           
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.console = Substitute.For<IConsole>();
+            double resultadoEsperado = 4.0129;
 
             //Act
-            double desvioPadrao = CalculadoraEstatistica.DesvioPadrao(numeros);
+            calculadoraView.console.ReadLine().Returns("6", "9", "15.3 15.4 8.4", "11");
+            calculadoraView.console.ReadKey().Returns("");
+            calculadoraView.Iniciar();
 
             //Assert
-            Assert.Equal(desvioPadraoEsperado, desvioPadrao);
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraEstatistica")]
         public void ExecutarCalculadora_VarianciaVetorDouble_RetornaDouble()
         {
-            //Arrange
-            double[] numeros = { 15.75, 20, 0, 1.5, 5.25, -1.5 };
-            double valorEsperado = 79.9917;
+            //Arrange           
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.console = Substitute.For<IConsole>();
+            double resultadoEsperado = 79.9917;
 
             //Act
-            double variancia = CalculadoraEstatistica.Variancia(numeros);
+            calculadoraView.console.ReadLine().Returns("6", "10", "15.75 20 0 1.5 5.25 -1.5", "11");
+            calculadoraView.console.ReadKey().Returns("");
+            calculadoraView.Iniciar();
 
             //Assert
-            Assert.Equal(valorEsperado, variancia);
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
         }
 
         #endregion
