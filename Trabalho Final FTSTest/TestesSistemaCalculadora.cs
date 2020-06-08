@@ -91,7 +91,7 @@ namespace Trabalho_Final_FTSTest
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraSimples")]
-        public void ExecutarCalculadora_EntrarCalculadoraCientifica_RetornaDouble()
+        public void ExecutarCalculadora_EntrarCalculadoraCientifica()
         {
             //Arrange
             CalculadoraView calculadoraView = Substitute.ForPartsOf<CalculadoraView>();
@@ -111,7 +111,7 @@ namespace Trabalho_Final_FTSTest
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraSimples")]
-        public void ExecutarCalculadora_ExecutarCalculadoraEstatistica_RetornaDouble()
+        public void ExecutarCalculadora_ExecutarCalculadoraEstatistica()
         {
             //Arrange
             CalculadoraView calculadoraView = Substitute.ForPartsOf<CalculadoraView>();
@@ -131,7 +131,7 @@ namespace Trabalho_Final_FTSTest
     
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraSimples")]
-        public void ExecutarCalculadora_Sair_RetornaDouble()
+        public void ExecutarCalculadora_Sair()
         {
             //Arrange
             CalculadoraView calculadoraView = Substitute.ForPartsOf<CalculadoraView>();
@@ -147,7 +147,7 @@ namespace Trabalho_Final_FTSTest
         }
         #endregion
 
-        #region Calculadora Calculadora
+        #region Calculadora Cientifica
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_LogaritmoDouble_RetornaDouble()

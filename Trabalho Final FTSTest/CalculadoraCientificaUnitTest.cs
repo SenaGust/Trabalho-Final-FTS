@@ -19,10 +19,10 @@ namespace Trabalho_Final_FTSTest
             double valorEsperado = 0.6532;
 
             // Act
-            double sen = CalculadoraCientifica.Logaritmo(num);
+            double valorObitido = CalculadoraCientifica.Logaritmo(num);
 
             //Assert
-            Assert.Equal(valorEsperado, sen);
+            Assert.Equal(valorEsperado, valorObitido);
         }
 
         [Fact]
@@ -34,10 +34,10 @@ namespace Trabalho_Final_FTSTest
             double valorEsperado = double.NegativeInfinity;
 
             // Act
-            double sen = CalculadoraCientifica.Logaritmo(num);
+            double valorObitido = CalculadoraCientifica.Logaritmo(num);
 
             //Assert
-            Assert.Equal(valorEsperado, sen);
+            Assert.Equal(valorEsperado, valorObitido);
         }
 
         [Fact]
@@ -49,10 +49,10 @@ namespace Trabalho_Final_FTSTest
             double valorEsperado = double.NaN;
 
             // Act
-            double sen = CalculadoraCientifica.Logaritmo(num);
+            double valorObitido = CalculadoraCientifica.Logaritmo(num);
 
             //Assert
-            Assert.Equal(valorEsperado, sen);
+            Assert.Equal(valorEsperado, valorObitido);
         }
         #endregion
 
@@ -66,10 +66,10 @@ namespace Trabalho_Final_FTSTest
             double valorEsperado = 0.0349;
 
             // Act
-            double sen = CalculadoraCientifica.Sen(num);
+            double valorObitido = CalculadoraCientifica.Sen(num);
 
             //Assert
-            Assert.Equal(valorEsperado, sen);
+            Assert.Equal(valorEsperado, valorObitido);
 
         }
 
@@ -82,10 +82,10 @@ namespace Trabalho_Final_FTSTest
             double valorEsperado = -0.0349;
 
             // Act
-            double sen = CalculadoraCientifica.Sen(num);
+            double valorObitido = CalculadoraCientifica.Sen(num);
 
             //Assert
-            Assert.Equal(valorEsperado, sen);
+            Assert.Equal(valorEsperado, valorObitido);
         }
 
         [Fact]
@@ -97,10 +97,10 @@ namespace Trabalho_Final_FTSTest
             double valorEsperado = 0;
 
             // Act
-            double sen = CalculadoraCientifica.Sen(num);
+            double valorObitido = CalculadoraCientifica.Sen(num);
 
             //Assert
-            Assert.Equal(valorEsperado, sen);
+            Assert.Equal(valorEsperado, valorObitido);
         }
         #endregion
 
@@ -309,7 +309,7 @@ namespace Trabalho_Final_FTSTest
             // Act
             double valorObtido = CalculadoraCientifica.Porcentagem(num);
             // Assert
-            Assert.Equal(valorEsperado, valorEsperado);
+            Assert.Equal(valorEsperado, valorObtido);
         }
 
         [Fact]
@@ -322,7 +322,7 @@ namespace Trabalho_Final_FTSTest
             // Act
             double valorObtido = CalculadoraCientifica.Porcentagem(num);
             // Assert
-            Assert.Equal(valorEsperado, valorEsperado);
+            Assert.Equal(valorEsperado, valorObtido);
         }
 
         #endregion
