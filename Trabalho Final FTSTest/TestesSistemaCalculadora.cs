@@ -13,15 +13,17 @@ namespace Trabalho_Final_FTSTest
     {
 
         #region Calculadora Simples
-        [Fact]
+        [Theory]
+        [InlineData("2.4444", "4.2222", 6.6666)]
+        [InlineData("-2.4444", "-4.2222", -6.6666)]
+        [InlineData("-2.4444", "4.2222", 1.7778)]
+        [InlineData("2.4444", "-4.2222", -1.7778)]
         [Trait("IntegrationTest", "ExecutarCalculadoraSimples")]
-        public void ExecutarCalculadora_RealizaSomaDouble_RetornaDouble()
+        public void ExecutarCalculadora_RealizaSomaDouble_RetornaDouble(string a, string b, double resultadoEsperado)
         {
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
-            string a = "2.4444", b = "4.2222";
-            double resultadoEsperado = 6.6666;
 
             // Act            
             calculadoraView.console.ReadLine().Returns("1", a, b, "7"); // Simulando o return do CalculadoraView.MenuSimples()
