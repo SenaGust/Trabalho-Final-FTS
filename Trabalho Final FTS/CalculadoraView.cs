@@ -71,7 +71,7 @@ namespace Trabalho_Final_FTS
             console.WriteLine("\t 8. Cosseno");
             console.WriteLine("\t 9. Tangente");
             console.WriteLine("\t10. Radiciação");
-            console.WriteLine("\t11. Ponteciação");
+            console.WriteLine("\t11. Potenciação");
             console.WriteLine("\t12. Porcentagem");
             console.WriteLine("\t13. Pi");
             console.WriteLine("\t14. Sair");
@@ -79,7 +79,7 @@ namespace Trabalho_Final_FTS
             console.Write("Escolha uma das opções acima: ");
 
             return Convert.ToInt32(console.ReadLine());
-        }
+        }        
         public int MenuSimples()
         {
             console.WriteLine("\t\t.:Calculadora:.");
