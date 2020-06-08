@@ -281,50 +281,92 @@ namespace Trabalho_Final_FTSTest
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_MediaVetorDouble_RetornaDouble()
         {
+            //Arrange
+            double[] numeros = { 15.3, 15.4, 8.4 };
+            double mediaEsperada = 13.0333;
 
+            //Act
+            double media = CalculadoraEstatistica.Media(numeros);
+
+            //Assert
+            Assert.Equal(mediaEsperada, media);
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_MinimoVetorDouble_RetornaDouble()
         {
+            //Arrange
+            double[] numeros = { 15.75, 20, 0, 1.5, 5.25, -1.5 };
+            double valorEsperado = -1.5;
 
+            //Act
+            double minimo = CalculadoraEstatistica.Minimo(numeros);
+
+            //Assert
+            Assert.Equal(valorEsperado, minimo);
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_MaximoVetorDouble_RetornaDouble()
         {
+            //Arrange
+            double[] numeros = { 12, 8, 25, 5 };
+            double valorEsperado = 25;
 
+            //Act
+            double maximo = CalculadoraEstatistica.Maximo(numeros);
+
+            //Assert
+            Assert.Equal(valorEsperado, maximo);
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_MedianaVetorDouble_RetornaDouble()
         {
+            //Arrange
+            double[] valores = { 20.0, 10.0, 50.0, 7.0, 8.0 };
+            double valorEsperado = 10.0;
 
+            //Act
+            double mediana = CalculadoraEstatistica.Mediana(valores);
+
+            //Assert
+            Assert.Equal(valorEsperado, mediana);
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_DesvioPadraoVetorDouble_RetornaDouble()
         {
+            //Arrange
+            double[] numeros = { 15.3, 15.4, 8.4 };
+            double desvioPadraoEsperado = 4.0129;
 
+            //Act
+            double desvioPadrao = CalculadoraEstatistica.DesvioPadrao(numeros);
+
+            //Assert
+            Assert.Equal(desvioPadraoEsperado, desvioPadrao);
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_VarianciaVetorDouble_RetornaDouble()
         {
+            //Arrange
+            double[] numeros = { 15.75, 20, 0, 1.5, 5.25, -1.5 };
+            double valorEsperado = 79.9917;
 
+            //Act
+            double variancia = CalculadoraEstatistica.Variancia(numeros);
+
+            //Assert
+            Assert.Equal(valorEsperado, variancia);
         }
 
-
-
-
         #endregion
-
     }
-
-
 }
