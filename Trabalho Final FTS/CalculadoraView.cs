@@ -1,4 +1,4 @@
-﻿    using Microsoft.Win32;
+﻿        using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -34,6 +34,27 @@ namespace Trabalho_Final_FTS
                 console.ReadKey();
                 console.Clear();
             }
+        }
+
+        public int MenuEstatica()
+        {
+            console.WriteLine(".:Calculadora Estatística:.");
+
+            console.WriteLine("\t 1. Somar");
+            console.WriteLine("\t 2. Subtrair");
+            console.WriteLine("\t 3. Multiplicar");
+            console.WriteLine("\t 4. Dividir");
+            console.WriteLine("\t 5. Media");
+            console.WriteLine("\t 6. Mínimo");
+            console.WriteLine("\t 7. Máximo");
+            console.WriteLine("\t 8. Mediana");
+            console.WriteLine("\t 9. Desvio Padrão");
+            console.WriteLine("\t 10. Variância");
+            console.WriteLine("\t 11. Sair");
+
+            console.Write("Escolha uma das opções acima: ");
+
+            return Convert.ToInt32(console.ReadLine());
         }
 
         public int MenuCientifica()
@@ -124,7 +145,7 @@ namespace Trabalho_Final_FTS
                     console.WriteLine("Abrindo calculadora cientifica...");
                     break;
                 case 6:
-                    console.WriteLine("Encerrando o programa...");
+                    console.WriteLine("Digite qualquer tecla para encerrar o programa...");
                     break;
                 default:
                     console.WriteLine("Escolha outra opção.");
@@ -240,7 +261,7 @@ namespace Trabalho_Final_FTS
                     break;
                 case 14:
 
-                    console.WriteLine("Encerrando o programa...");
+                    console.WriteLine("Digite qualquer tecla para encerrar o programa...");
                     break;
                 default:
                     console.WriteLine("Escolha outra opção.");
@@ -248,10 +269,125 @@ namespace Trabalho_Final_FTS
             }
         }
 
-       public double ReceberValor()
+        public void ExecutarCalculadoraEstatistica(int opcao)
+        {
+            double a, b;
+            double[] c;
+            Func<double, double> funcao1;
+            Func<double, double, double> funcao2;
+            Func<double[], double> funcao3;
+
+
+            switch (opcao)
+            {
+                case 1:
+                    a = ReceberValor();
+                    b = ReceberValor();
+
+                    funcao2 = (x, y) => CalculadoraEstatistica.Somar(x, y);
+
+                    console.WriteLine("O resultado é " + funcao2(a, b) + ".");
+                    break;
+
+                case 2:
+                    a = ReceberValor();
+                    b = ReceberValor();
+
+                    funcao2 = (x, y) => CalculadoraEstatistica.Subtrair(x, y);
+
+                    console.WriteLine("O resultado é " + funcao2(a, b) + ".");
+                    break;
+
+                case 3:
+                    a = ReceberValor();
+                    b = ReceberValor();
+
+                    funcao2 = (x, y) => CalculadoraEstatistica.Multiplicar(x, y);
+
+                    console.WriteLine("O resultado é " + funcao2(a, b) + ".");
+                    break;
+
+                case 4:
+                    a = ReceberValor();
+                    b = ReceberValor();
+
+                    funcao2 = (x, y) => CalculadoraEstatistica.Dividir(x, y);
+
+                    console.WriteLine("O resultado é " + funcao2(a, b) + ".");
+                    break;
+
+                case 5:
+                    c = ReceberValores();
+
+                    funcao3 = (x) => CalculadoraEstatistica.Media(x);
+
+                    console.WriteLine("O resultado é " + funcao3(c) + ".");
+                    break;
+                case 6:
+                    c = ReceberValores();
+
+                    funcao3 = (x) => CalculadoraEstatistica.Minimo(x);
+
+                    console.WriteLine("O resultado é " + funcao3(c) + ".");
+                    break;
+                case 7:
+                    c = ReceberValores();
+
+                    funcao3 = (x) => CalculadoraEstatistica.Maximo(x);
+
+                    console.WriteLine("O resultado é " + funcao3(c) + ".");
+                    break;
+                case 8:
+                    c = ReceberValores();
+
+                    funcao3 = (x) => CalculadoraEstatistica.Mediana(x);
+
+                    console.WriteLine("O resultado é " + funcao3(c) + ".");
+                    break;
+                case 9:
+                    c = ReceberValores();
+
+                    funcao3 = (x) => CalculadoraEstatistica.DesvioPadrao(x);
+
+                    console.WriteLine("O resultado é " + funcao3(c) + "."); ;
+                    break;
+                case 10:
+                    c = ReceberValores();
+
+                    funcao3 = (x) => CalculadoraEstatistica.Variancia(x);
+
+                    console.WriteLine("O resultado é " + funcao3(c) + ".");
+                    break;
+                case 11:
+
+                    console.WriteLine("Digite qualquer tecla para encerrar o programa...");
+                    break;
+                default:
+                    console.WriteLine("Escolha outra opção.");
+                    break;
+            }
+        }
+
+        public double ReceberValor()
         {
             console.Write("Insira um valor: ");
             return Convert.ToDouble(console.ReadLine());
+        }
+
+        public double[] ReceberValores()
+        {            
+            console.Write("Insira os valores separados por um espaço: ");
+            string valores = console.ReadLine();
+            string[] aux = valores.Split(' ');
+
+            double[] vetorValores = new double[valores.Length];
+
+            for (int i = 0; i < aux.Length; i++)
+            {
+                vetorValores[i] = double.Parse(aux[i]);
+            }
+
+            return vetorValores;
         }
     }
 }

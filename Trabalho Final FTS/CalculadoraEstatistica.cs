@@ -10,93 +10,54 @@ namespace Trabalho_Final_FTS
     {
         public static double Media(double[] conjuntoNumeros)
         {
-            double somaTotal = 0;
-
-            for (int i = 0; i < conjuntoNumeros.Length; i++)
-            {
-                somaTotal = conjuntoNumeros[i];
-            }
-            return (somaTotal/conjuntoNumeros.Length);
+            return Math.Round(conjuntoNumeros.Sum() / conjuntoNumeros.Length, 4);
         }
 
         public static double Minimo(double[] conjuntoNumeros)
         {
-            double menor = double.MaxValue;
-
-            for (int i = 0; i < conjuntoNumeros.Length; i++)
-            {
-                if (conjuntoNumeros[i] < menor)
-                {
-                    menor = conjuntoNumeros[i];
-                }
-            }
-
-            return menor;
+            return conjuntoNumeros.Min();
         }
 
         public static double Maximo(double[] conjuntoNumeros)
         {
-            double maximo = double.MinValue;
-            for (int i = 0; i < conjuntoNumeros.Length; i++)
-            {
-                if(conjuntoNumeros[i] > maximo)
-                {
-                    maximo = conjuntoNumeros[i];
-                }
-            }
-            return maximo;
+            return conjuntoNumeros.Max();
         }
 
         public static double Mediana(double[] conjuntoNumeros)
         {
-            if(conjuntoNumeros.Length > 1)
+            if (conjuntoNumeros.Length > 1)
             {
+                int metade = conjuntoNumeros.Length / 2;
                 Array.Sort(conjuntoNumeros);
+
                 if (conjuntoNumeros.Length % 2 != 0)
-                {
-                    return conjuntoNumeros[conjuntoNumeros.Length / 2];
-                }
+                    return conjuntoNumeros[metade];
                 else
-                {
-                    return (conjuntoNumeros[(conjuntoNumeros.Length / 2) - 1] +
-                        conjuntoNumeros[(conjuntoNumeros.Length / 2) + 1]) / 2;
-                }
+                    return (conjuntoNumeros[metade - 1] +
+                        conjuntoNumeros[metade + 1]) / 2;
             }
             else
-            {
                 return conjuntoNumeros[0];
-            
-            }
         }
 
         public static double DesvioPadrao(double[] conjuntoNumeros)
         {
             double somaTotalMedias = 0;
-            double media = 0;
-            media = conjuntoNumeros.Sum() / conjuntoNumeros.Length;
 
             for (int i = 0; i < conjuntoNumeros.Length; i++)
-            {
-                double aux = conjuntoNumeros[i] - media;
-                somaTotalMedias += Math.Pow(aux, 2);
-            }
+                somaTotalMedias += Math.Pow(conjuntoNumeros[i] - (conjuntoNumeros.Sum() / conjuntoNumeros.Length), 2);
 
-            double desvioPadrao = Math.Sqrt(somaTotalMedias / conjuntoNumeros.Length);
-
-            return desvioPadrao;
+            return Math.Round(Math.Sqrt(somaTotalMedias / conjuntoNumeros.Length), 4);
         }
 
         public static double Variancia(double[] conjuntoNumeros)
         {
-            double variancia = 0;
-            double media = 0;
-            media = conjuntoNumeros.Sum() / conjuntoNumeros.Length;
+            double variancia = 0, media = Media(conjuntoNumeros);
 
-            for (int i = 0; i < conjuntoNumeros.Length; i++)
-            {
+            for(int i = 0; i < conjuntoNumeros.Length; i++)
                 variancia += CalculadoraCientifica.Radiciacao(conjuntoNumeros[i] - media);
-            }
-            return variancia /= conjuntoNumeros.Length - 1;
+
+            return Math.Round(variancia /= (conjuntoNumeros.Length - 1), 4);
         }
     }
 }

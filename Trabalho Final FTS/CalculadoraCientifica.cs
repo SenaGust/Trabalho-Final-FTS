@@ -43,7 +43,7 @@ namespace Trabalho_Final_FTS
 
         public static double Porcentagem(double a) //João
         {
-            return Math.Round((a / 100));
+            return Math.Round((a / 100), 4);
         }
 
         public static double Pi() //Lorena
