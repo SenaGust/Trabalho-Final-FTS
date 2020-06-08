@@ -78,7 +78,7 @@ namespace Trabalho_Final_FTSTest
         {
             //Arrange
             double[] numeros = { 15.3, 15.4, 8.4 };
-            double desvioPadraoEsperado = 4.0129;
+            double desvioPadraoEsperado = 3.2765;
 
             //Act
             double desvioPadrao = CalculadoraEstatistica.Media(numeros);
