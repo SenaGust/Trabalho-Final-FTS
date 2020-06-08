@@ -154,7 +154,24 @@ namespace Trabalho_Final_FTSTest
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_LogaritmoDouble_RetornaDouble()
         {
-            // Arrange
+
+            //Arrange
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.console = Substitute.For<IConsole>();
+            string a = "4,5";
+            double resultadoEsperado = 0.6532;
+
+            // Act            
+            calculadoraView.console.ReadLine().Returns("5", "5", a, "7"); // Simulando o return do CalculadoraView.MenuSimples()
+            calculadoraView.console.ReadKey().Returns(""); //Entrar na calculadora_cientifica, entrar_logaritmo, número a calcular, sair
+            calculadoraView.Iniciar();
+
+            //Assert
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
+
+
+
+            /*// Arrange
             double num = 4.5;
             double valorEsperado = 0.6532;
 
@@ -162,7 +179,7 @@ namespace Trabalho_Final_FTSTest
             double valorObitido = CalculadoraCientifica.Logaritmo(num);
 
             //Assert
-            Assert.Equal(valorEsperado, valorObitido);
+            Assert.Equal(valorEsperado, valorObitido);*/
         }
 
         [Fact]
@@ -210,13 +227,28 @@ namespace Trabalho_Final_FTSTest
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_TangenteDouble_RetornaDouble()
         {
-            // Arrange
+
+            //Arrange
+            CalculadoraView calculadoraView = new CalculadoraView();
+            calculadoraView.console = Substitute.For<IConsole>();
+            string a = "45";
+            double resultadoEsperado = 1;
+
+            // Act            
+            calculadoraView.console.ReadLine().Returns("5", "9", a,"7"); // Simulando o return do CalculadoraView.MenuSimples()
+            calculadoraView.console.ReadKey().Returns(""); //Entrar na calculadora_cientifica, entrar_tangente, número a calcular, sair
+            calculadoraView.Iniciar();
+
+            //Assert
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
+
+            /*// Arrange
             double num = 45;
             double valorEsperado = 1;
             // Act
             double valorObtido = CalculadoraCientifica.Tan(num);
             //Assert
-            Assert.Equal(valorEsperado, valorObtido);
+            Assert.Equal(valorEsperado, valorObtido);*/
         }
 
         [Fact]
