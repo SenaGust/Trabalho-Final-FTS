@@ -89,7 +89,8 @@ namespace Trabalho_Final_FTS
             console.WriteLine("\t3. Multiplicar");
             console.WriteLine("\t4. Dividir");
             console.WriteLine("\t5. Calculadora Científica");
-            console.WriteLine("\t6. Sair");
+            console.WriteLine("\t6. Calculadora Estatística");
+            console.WriteLine("\t7. Sair");
             
             console.Write("Escolha uma das opções acima: ");
             
