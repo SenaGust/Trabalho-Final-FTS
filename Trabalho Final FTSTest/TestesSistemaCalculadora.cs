@@ -154,16 +154,6 @@ namespace Trabalho_Final_FTSTest
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_LogaritmoDouble_RetornaDouble()
         {
-            // Arrange
-            double num = 4.5;
-            double valorEsperado = 0.6532;
-
-            // Act
-            double valorObitido = CalculadoraCientifica.Logaritmo(num);
-
-            //Assert
-            Assert.Equal(valorEsperado, valorObitido);
-
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -177,21 +167,12 @@ namespace Trabalho_Final_FTSTest
 
             //Assert
             calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
-
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_LnDouble_RetornaDouble()
         {
-            // Arrange
-            double num = 25;
-            double valorEsperado = 3.2189;
-            // Act
-            double valorObtido = CalculadoraCientifica.Ln(num);
-            //Assert
-            Assert.Equal(valorEsperado, valorObtido);
-
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -205,24 +186,12 @@ namespace Trabalho_Final_FTSTest
 
             //Assert
             calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
-
-          
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_SenoDouble_RetornaDouble()
         {
-            // Arrange
-            double num = 2;
-            double valorEsperado = 0.0349;
-
-            // Act
-            double valorObitido = CalculadoraCientifica.Sen(num);
-
-            //Assert
-            Assert.Equal(valorEsperado, valorObitido);
-
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -236,21 +205,12 @@ namespace Trabalho_Final_FTSTest
 
             //Assert
             calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
-          
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_CossenoDouble_RetornaDouble()
         {
-            // Arrange
-            double num = 2;
-            double valorEsperado = 0.9994;
-            // Act
-            double valorObtido = CalculadoraCientifica.Cos(num);
-            //Assert
-            Assert.Equal(valorEsperado, valorObtido);
-
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -263,22 +223,13 @@ namespace Trabalho_Final_FTSTest
             calculadoraView.Iniciar();
 
             //Assert
-            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
-            
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");  
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_TangenteDouble_RetornaDouble()
         {
-            // Arrange
-            double num = 45;
-            double valorEsperado = 1;
-            // Act
-            double valorObtido = CalculadoraCientifica.Tan(num);
-            //Assert
-            Assert.Equal(valorEsperado, valorObtido);
-
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -292,24 +243,12 @@ namespace Trabalho_Final_FTSTest
 
             //Assert
             calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
-
-           
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_RadiciacaoDouble_RetornaDouble()
         {
-            // Arrange
-            double num = 72;
-            double valorEsperado = 8.4853;
-
-            // Act
-            double radiciacao = CalculadoraCientifica.Radiciacao(num);
-
-            //Assert
-            Assert.Equal(valorEsperado, radiciacao);
-
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -323,22 +262,12 @@ namespace Trabalho_Final_FTSTest
 
             //Assert
             calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
-            
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_PotenciacaoDouble_RetornaDouble()
         {
-            // Arrange
-            double num1 = 5;
-            double num2 = 4;
-            double valorEsperado = 625;
-            // Act
-            double valorObtido = CalculadoraCientifica.Potenciacao(num1, num2);
-            //Assert
-            Assert.Equal(valorEsperado, valorObtido);
-
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -352,22 +281,13 @@ namespace Trabalho_Final_FTSTest
             calculadoraView.Iniciar();
 
             //Assert
-            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
-            
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");  
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_PorcentagemDouble_RetornaDouble()
         {
-            // Arrange
-            double num = 25.5;
-            double valorEsperado = 0.255;
-            // Act
-            double valorObtido = CalculadoraCientifica.Porcentagem(num);
-            // Assert
-            Assert.Equal(valorEsperado, valorObtido);
-
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -380,23 +300,13 @@ namespace Trabalho_Final_FTSTest
             calculadoraView.Iniciar();
 
             //Assert
-            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
-           
+            calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}."); 
         }
 
         [Fact]
         [Trait("IntegrationTest", "ExecutarCalculadoraCientifica")]
         public void ExecutarCalculadora_PiDouble_RetornaDouble()
         {
-            // Arrange
-            double valorEsperado = 3.14159265359;
-
-            // Act
-            double pi = CalculadoraCientifica.Pi();
-
-            //Assert
-            Assert.Equal(valorEsperado, pi);
-
             //Arrange
             CalculadoraView calculadoraView = new CalculadoraView();
             calculadoraView.console = Substitute.For<IConsole>();
@@ -409,11 +319,8 @@ namespace Trabalho_Final_FTSTest
 
             //Assert
             calculadoraView.console.Received().WriteLine($"O resultado é {resultadoEsperado}.");
-           
         }
         #endregion
-
-
 
         #region Calculadora Estatistica
         [Fact]
